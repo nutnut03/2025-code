@@ -54,8 +54,20 @@ nav a {
 
 nav a:hover {
   text-decoration: underline;
+  color: blue;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 h2 {
   color: darkblue;
   margin: 20px;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 36px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  border-bottom: 2px solid lightblue;
+  border-radius: 8px;
+  background-color: lightblue;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
