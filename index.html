@@ -7,15 +7,16 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <h2>My First JavaScript</h2>
+
+    <button
+      type="button"
+      onclick="document.getElementById('demo').innerHTML = Date()"
+    >
+      Click me to display Date and Time.
+    </button>
+
     <p id="demo"></p>
-
-    <script>
-      let x = 5;
-      let y = 6;
-      let z = x + y;
-
-      document.getElementById("demo").innerHTML = "The value of z is " + z;
-    </script>
     <script src="scripts.js"></script>
   </body>
 </html>
