@@ -11,21 +11,14 @@ p {
   font-size: 18px;
   line-height: 1.6;
   color: #333;
-  text-align: justify;
-  background-color: white;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 footer {
-  background-color: #333;
-  color: white;
   text-align: center;
-  padding: 10px 0;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
+  padding: 20px;
+  background-color: lightblue;
+  color: darkblue;
+  font-size: 14px;
 }
 
 nav {
@@ -68,22 +61,30 @@ h2 {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-div.gallery {
-  border: 1px solid #ccc;
-}
-
-div.gallery:hover {
-  border: 1px solid #777;
-}
-
-div.gallery img {
-  width: 100%;
+img {
+  border-radius: 8px;
+  max-width: 100%;
   height: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.3), 0 12px 40px 0 rgba(0, 0, 0, 0.25);
 }
 
-div.desc {
+.desc {
   padding: 15px;
   text-align: center;
+  font-size: 18px;
+  color: white
+  font-weight: bold;
+  border-radius: 0 0 8px 8px;
+}
+
+.desc:hover {
+  background-color: lightblue;
+  color: darkblue;
 }
 
 .responsive {
@@ -109,4 +110,26 @@ div.desc {
   content: "";
   display: table;
   clear: both;
+}
+
+.image-container {
+  text-align: center;
+  margin: 20px 0;
+  padding: 20px;
+  background-color: white;
+}
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.image-container p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #555;
+}
+.image-container p a {
+  color: darkblue;
+  text-decoration: underline;
 }
