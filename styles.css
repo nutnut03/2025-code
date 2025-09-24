@@ -1,9 +1,18 @@
 * {
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
   font-family: Arial, sans-serif;
   scroll-behavior: smooth;
   background-color: rgb(255, 255, 255);
+}
+
+h2 {
+  color: darkblue;
+  margin: 20px;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 36px;
 }
 
 p {
@@ -22,12 +31,10 @@ footer {
 }
 
 nav {
-  margin: 20px;
   text-align: center;
   background-color: lightblue;
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 20px 0;
+  margin-bottom: 20px;
 }
 
 nav a {
@@ -38,6 +45,7 @@ nav a {
   font-size: 18px;
   transition: color 0.3s;
   padding: 10px 20px;
+  border-radius: 4px;
 }
 
 nav a:hover {
@@ -48,18 +56,7 @@ nav a:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-h2 {
-  color: darkblue;
-  margin: 20px;
-  padding: 10px 20px;
-  text-align: center;
-  font-size: 36px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  border-bottom: 2px solid lightblue;
-  border-radius: 8px;
-  background-color: lightblue;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
+
 
 img {
   border-radius: 8px;
@@ -91,6 +88,7 @@ img:hover {
   padding: 0 6px;
   float: left;
   width: 24.99999%;
+  margin: 6px 0;
 }
 
 @media only screen and (max-width: 700px) {
