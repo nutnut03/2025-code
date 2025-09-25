@@ -29,10 +29,20 @@
 
         $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
         $stmt = $conn->prepare($sql);
+
+        if (!$stmt) {
+            die("SQL error: " . $conn->error);
+        }
+
         $stmt->bind_param("ss", $user, $pass);
 
         if ($stmt->execute()) {
-            echo "Registration successful! <a href='login.php'>Login here</a>";
+            // ✅ Show alert then redirect to login.php
+            echo "<script>
+                alert('You registered successfully!');
+                window.location.href = 'login.php';
+              </script>";
+            exit();
         } else {
             echo "Error: " . $stmt->error;
         }
@@ -45,6 +55,8 @@
         Password: <input type="password" name="password" required><br><br>
         <input type="submit" value="Register">
     </form>
+
+
 </body>
 
 </html>

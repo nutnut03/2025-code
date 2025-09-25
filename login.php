@@ -39,12 +39,18 @@
             $row = $result->fetch_assoc();
             if (password_verify($pass, $row['password'])) {
                 $_SESSION['username'] = $row['username'];
-                echo "Login successful! <a href='welcome.php'>Go to Welcome Page</a>";
+                // ✅ Redirect to welcome page
+                header("Location: welcome.php");
+                exit();
             } else {
-                echo "Invalid password.";
+                echo "<script>
+                alert('invalid password!');
+              </script>";
             }
         } else {
-            echo "No user found.";
+            echo "<script>
+                alert('No user found!');
+              </script>";
         }
     }
     ?>
@@ -55,7 +61,6 @@
         Password: <input type="password" name="password" required><br><br>
         <input type="submit" value="Login">
     </form>
-
 
 </body>
 
