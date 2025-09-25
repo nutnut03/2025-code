@@ -13,7 +13,8 @@
     $servername = "localhost";
     $username   = "root";   // default XAMPP username
     $password   = "";       // default XAMPP password is empty
-    $dbname     = "testdb1"; // change this to your actual database name
+    $dbname     = "mydatabase"; // change this to your actual database name
+
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -24,21 +25,22 @@
     }
     echo "Connected successfully<br>";
 
-    $sql = "SELECT id, firstname, lastname FROM MyGuests";
-    $result = $conn->query($sql);
+    // SQL to create table
+    $sql = "CREATE TABLE IF NOT EXISTS users (
+   id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+)";
 
-    if ($result->num_rows > 0) {
-        // output data of each row
-        while ($row = $result->fetch_assoc()) {
-            echo "id: " . $row["id"] . " - Name: " . $row["firstname"] . " " . $row["lastname"] . "<br>";
-        }
+    if ($conn->query($sql) === TRUE) {
+        echo "Table MyGuests created successfully";
     } else {
-        echo "0 results";
+        echo "Error creating table: " . $conn->error;
     }
+
     $conn->close();
     ?>
-
-
 </body>
+
 
 </html>

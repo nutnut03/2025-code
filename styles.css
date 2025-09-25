@@ -88,3 +88,42 @@ p {
   font-size: 14px;
   color: rgb(32, 32, 32);
 } 
+
+form{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  text-align: center;
+}
+
+input[type= text], input[type=password] {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 10px;
+  width: 80%;
+  margin-bottom: 15px;
+  transition: border-color 0.3s;
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+input[type= submit]{
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 20px;
+  transition: background-color 0.3s;
+}
