@@ -9,34 +9,33 @@
 </head>
 
 <body>
+    <?php
+    $servername = "localhost";
+    $username   = "root";   // default XAMPP username
+    $password   = "";       // default XAMPP password is empty
+    $dbname     = "testdb1"; // change this to your actual database name
 
-    <form action="action_page.php" style="border:1px solid #ccc">
-        <div class="container">
-            <h1>Sign Up</h1>
-            <p>Please fill in this form to create an account.</p>
-            <hr>
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
-            <label for="email"><b>Email</b></label>
-            <input type="text" placeholder="Enter Email" name="email" required>
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    echo "Connected successfully<br>";
 
-            <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
+    $sql = "INSERT INTO MyGuests (firstname, lastname, email)
+VALUES ('Carlo', 'Pondar', 'carlo.meriseinc.com')";
 
-            <label for="psw-repeat"><b>Repeat Password</b></label>
-            <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+    if ($conn->query($sql) === TRUE) {
+        echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
 
-            <label>
-                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-            </label>
+    $conn->close();
+    ?>
 
-            <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
-
-            <div class="clearfix">
-                <button type="button" class="cancelbtn">Cancel</button>
-                <button type="submit" class="signupbtn">Sign Up</button>
-            </div>
-        </div>
-    </form>
 
 </body>
 
