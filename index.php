@@ -24,15 +24,17 @@
     }
     echo "Connected successfully<br>";
 
-    $sql = "INSERT INTO MyGuests (firstname, lastname, email)
-VALUES ('Carlo', 'Pondar', 'carlo.meriseinc.com')";
+    $sql = "SELECT id, firstname, lastname FROM MyGuests";
+    $result = $conn->query($sql);
 
-    if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while ($row = $result->fetch_assoc()) {
+            echo "id: " . $row["id"] . " - Name: " . $row["firstname"] . " " . $row["lastname"] . "<br>";
+        }
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        echo "0 results";
     }
-
     $conn->close();
     ?>
 
