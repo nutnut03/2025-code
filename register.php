@@ -10,38 +10,14 @@
 
 <body>
     <?php
-    $servername = "localhost";
-    $username   = "root";
-    $password   = "";
-    $dbname     = "mydatabase";
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+    $conn = new mysqli("localhost", "root", "", "mydatabase");
+    if ($conn->connect_error) die("Connection failed: " . $conn->connect_error);
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $user = $_POST['username'];
-        $pass = password_hash($_POST['password'], PASSWORD_DEFAULT); // hash password
-
-        $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
-        $stmt = $conn->prepare($sql);
-
-        if (!$stmt) {
-            die("SQL error: " . $conn->error);
-        }
-
-        $stmt->bind_param("ss", $user, $pass);
-
+        $stmt = $conn->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
+        $stmt->bind_param("ss", $_POST['username'], $_POST['password']);
         if ($stmt->execute()) {
-            // ✅ Show alert then redirect to login.php
-            echo "<script>
-                alert('You registered successfully!');
-                window.location.href = 'login.php';
-              </script>";
+            echo "<script>alert('You registered successfully!');location.href='login.php';</script>";
             exit();
         } else {
             echo "Error: " . $stmt->error;
@@ -49,10 +25,10 @@
     }
     ?>
 
-    <form method="post" action="">
+    <form method="post">
         <h2>Register</h2>
-        Username: <input type="text" name="username" required><br><br>
-        Password: <input type="password" name="password" required><br><br>
+        <input type="text" name="username" placeholder="Username" required><br><br>
+        <input type="password" name="password" placeholder="Password" required><br><br>
         <input type="submit" value="Register">
     </form>
 

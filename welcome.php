@@ -17,37 +17,29 @@
     }
     ?>
     <div class="welcome-box">
-        <h1>Welcome, <?php echo $_SESSION['username']; ?> 🎉</h1>
-        <p id="greeting">Have a great day!</p>
+        <h1>Welcome, <?= $_SESSION['username']; ?> 🎉</h1>
+        <p id="greeting"></p>
         <p id="clock"></p>
         <a class="btn" href="logout.php">Logout</a>
     </div>
-
     <script>
-        // Show live clock
-        function updateClock() {
-            const now = new Date();
-            const time = now.toLocaleTimeString();
-            const date = now.toDateString();
-            document.getElementById("clock").textContent = date + " • " + time;
-        }
-        setInterval(updateClock, 1000);
-        updateClock();
+        const clock = document.getElementById("clock"),
+            greeting = document.getElementById("greeting");
 
-        // Dynamic greeting based on time of day
+        function updateClock() {
+            let n = new Date();
+            clock.textContent = n.toDateString() + " • " + n.toLocaleTimeString();
+        }
+
         function setGreeting() {
-            const hour = new Date().getHours();
-            let greeting;
-            if (hour < 12) {
-                greeting = "Good morning, enjoy your day!";
-            } else if (hour < 18) {
-                greeting = "Good afternoon, keep up the good work!";
-            } else {
-                greeting = "Good evening, time to relax!";
-            }
-            document.getElementById("greeting").textContent = greeting;
+            let h = new Date().getHours();
+            greeting.textContent = h < 12 ? "Good morning, enjoy your day!" :
+                h < 18 ? "Good afternoon, keep up the good work!" :
+                "Good evening, time to relax!";
         }
         setGreeting();
+        updateClock();
+        setInterval(updateClock, 1000);
     </script>
 
 </body>

@@ -1,180 +1,191 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  scroll-behavior: smooth;
-  background-color: rgb(255, 255, 255);
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+ font-family: Arial, sans-serif;
+ scroll-behavior: smooth;
+ background-color: rgb(255, 255, 255);
 }
 
 /* Full-width input fields */
-  input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
+input[type="text"],
+input[type="password"] {
+ width: 100%;
+ padding: 15px;
+ margin: 5px 0 22px 0;
+ display: inline-block;
+ border: none;
+ background: #f1f1f1;
 }
 
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
+input[type="text"]:focus,
+input[type="password"]:focus {
+ background-color: #ddd;
+ outline: none;
 }
 
 hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
+ border: 1px solid #f1f1f1;
+ margin-bottom: 25px;
 }
 
 /* Set a style for all buttons */
 button {
-  background-color: #04AA6D;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
+ background-color: #04aa6d;
+ color: white;
+ padding: 14px 20px;
+ margin: 8px 0;
+ border: none;
+ cursor: pointer;
+ width: 100%;
+ opacity: 0.9;
 }
 
 button:hover {
-  opacity:1;
+ opacity: 1;
 }
 
 /* Extra styles for the cancel button */
 .cancelbtn {
-  padding: 14px 20px;
-  background-color: #f44336;
+ padding: 14px 20px;
+ background-color: #f44336;
 }
 
 /* Float cancel and signup buttons and add an equal width */
-.cancelbtn, .signupbtn {
-  float: left;
-  width: 50%;
+.cancelbtn,
+.signupbtn {
+ float: left;
+ width: 50%;
 }
 
 /* Add padding to container elements */
 .container {
-  padding: 16px;
-  background-color: white;
-  margin: auto;
-  width: 50%;
-  border: 2px solid black;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin-top: 50px;
-  margin-bottom: 50px;
+ padding: 16px;
+ background-color: white;
+ margin: auto;
+ width: 50%;
+ border: 2px solid black;
+ border-radius: 10px;
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ margin-top: 50px;
+ margin-bottom: 50px;
 }
 
 /* Clear floats */
 .clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
+ content: "";
+ clear: both;
+ display: table;
 }
 
 /* Change styles for cancel button and signup button on extra small screens */
 @media screen and (max-width: 300px) {
-  .cancelbtn, .signupbtn {
-    width: 100%;
-  }
+ .cancelbtn,
+ .signupbtn {
+  width: 100%;
+ }
 }
 
 p {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-size: 14px;
-  color: rgb(32, 32, 32);
-} 
-
-form{
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding: 20px;
-  border: 2px solid black;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: white;
-  text-align: center;
+ margin-top: 5px;
+ margin-bottom: 5px;
+ font-size: 14px;
+ color: rgb(32, 32, 32);
 }
 
-input[type= text], input[type=password] {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-  padding: 10px;
-  width: 80%;
-  margin-bottom: 15px;
-  transition: border-color 0.3s;
-  display: inline-block;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  text-align: left;
+form {
+ margin-top: 20px;
+ margin-bottom: 20px;
+ padding: 20px;
+ border: 2px solid black;
+ border-radius: 10px;
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ width: 50%;
+ margin-left: auto;
+ margin-right: auto;
+ background-color: white;
+ text-align: center;
 }
 
-input[type= submit]{
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  padding: 10px 20px;
-  transition: background-color 0.3s;
+input[type="text"],
+input[type="password"] {
+ border: 1px solid #ccc;
+ border-radius: 5px;
+ font-size: 16px;
+ padding: 10px;
+ width: 80%;
+ margin-bottom: 15px;
+ transition: border-color 0.3s;
+ display: inline-block;
+ margin-top: 10px;
+ margin-bottom: 10px;
+ text-align: left;
+}
+
+input[type="submit"] {
+ background-color: #4caf50;
+ color: white;
+ border: none;
+ border-radius: 5px;
+ cursor: pointer;
+ font-size: 16px;
+ padding: 10px 20px;
+ transition: background-color 0.3s;
 }
 
 body {
-      margin: 0;
-      padding: 0;
-      font-family: "Segoe UI", sans-serif;
-      background: linear-gradient(135deg, #ff9966, #ff5e62);
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .welcome-box {
-      background: #fff;
-      padding: 40px;
-      border-radius: 15px;
-      text-align: center;
-      box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
-      width: 400px;
-      animation: fadeIn 1s ease-in-out;
-    }
-    .welcome-box h1 {
-      color: #333;
-      margin-bottom: 15px;
-    }
-    .welcome-box p {
-      color: #555;
-      margin: 10px 0;
-    }
-    .btn {
-      display: inline-block;
-      padding: 12px 25px;
-      background: #ff5e62;
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 8px;
-      transition: background 0.3s ease;
-    }
-    .btn:hover {
-      background: #ff3d47;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    #clock {
-      font-weight: bold;
-      color: #222;
-      margin-top: 15px;
-      font-size: 1.1rem;
-    }
+ margin: 0;
+ padding: 0;
+ font-family: "Segoe UI", sans-serif;
+ background: linear-gradient(135deg, #ff9966, #ff5e62);
+ height: 100vh;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.welcome-box {
+ background: #fff;
+ padding: 40px;
+ border-radius: 15px;
+ text-align: center;
+ box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+ width: 400px;
+ animation: fadeIn 1s ease-in-out;
+}
+.welcome-box h1 {
+ color: #333;
+ margin-bottom: 15px;
+}
+.welcome-box p {
+ color: #555;
+ margin: 10px 0;
+}
+.btn {
+ display: inline-block;
+ padding: 12px 25px;
+ background: #ff5e62;
+ color: #fff;
+ text-decoration: none;
+ font-weight: bold;
+ border-radius: 8px;
+ transition: background 0.3s ease;
+}
+.btn:hover {
+ background: #ff3d47;
+}
+@keyframes fadeIn {
+ from {
+  opacity: 0;
+  transform: translateY(20px);
+ }
+ to {
+  opacity: 1;
+  transform: translateY(0);
+ }
+}
+#clock {
+ font-weight: bold;
+ color: #222;
+ margin-top: 15px;
+ font-size: 1.1rem;
+}
