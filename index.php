@@ -23,8 +23,6 @@
 
     $conn->close();
     ?>
-
-   
 </body>
 
 

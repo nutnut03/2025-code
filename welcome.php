@@ -23,23 +23,12 @@
         <a class="btn" href="logout.php">Logout</a>
     </div>
     <script>
-        const clock = document.getElementById("clock"),
-            greeting = document.getElementById("greeting");
-
-        function updateClock() {
-            let n = new Date();
-            clock.textContent = n.toDateString() + " • " + n.toLocaleTimeString();
-        }
-
-        function setGreeting() {
-            let h = new Date().getHours();
-            greeting.textContent = h < 12 ? "Good morning, enjoy your day!" :
-                h < 18 ? "Good afternoon, keep up the good work!" :
-                "Good evening, time to relax!";
-        }
-        setGreeting();
-        updateClock();
-        setInterval(updateClock, 1000);
+        const c = document.getElementById("clock"),
+            g = document.getElementById("greeting");
+        const up = () => c.textContent = new Date().toDateString() + " • " + new Date().toLocaleTimeString();
+        g.textContent = (h => h < 12 ? "Good morning!" : h < 18 ? "Good afternoon!" : "Good evening!")(new Date().getHours());
+        up();
+        setInterval(up, 1000);
     </script>
 
 </body>

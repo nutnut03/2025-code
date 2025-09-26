@@ -10,26 +10,21 @@
 
 <body>
     <?php
-    $conn = new mysqli("localhost", "root", "", "mydatabase");
-    if ($conn->connect_error) die("Connection failed: " . $conn->connect_error);
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $stmt = $conn->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
+    $conn = new mysqli("localhost", "root", "", "mydatabase") or die("DB Fail");
+    if ($_POST) {
+        $stmt = $conn->prepare("INSERT INTO users(username,password)VALUES(?,?)");
         $stmt->bind_param("ss", $_POST['username'], $_POST['password']);
-        if ($stmt->execute()) {
-            echo "<script>alert('You registered successfully!');location.href='login.php';</script>";
-            exit();
-        } else {
-            echo "Error: " . $stmt->error;
-        }
+        echo $stmt->execute()
+            ? "<script>alert('Registered successfully!');location='login.php';</script>"
+            : "Error: " . $stmt->error;
     }
     ?>
 
     <form method="post">
         <h2>Register</h2>
-        <input type="text" name="username" placeholder="Username" required><br><br>
-        <input type="password" name="password" placeholder="Password" required><br><br>
-        <input type="submit" value="Register">
+        <label>Username: <input type="text" name="username" required></label><br><br>
+        <label>Password: <input type="password" name="password" required></label><br><br>
+        <input type="submit" value="Login">
     </form>
 
 
