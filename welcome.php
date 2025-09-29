@@ -8,28 +8,37 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
+<?php
+session_start();
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit();
+}
+?>
+<div class="welcome-box">
+    <h1>Welcome, <?= $_SESSION['username']; ?> 🎉</h1>
+    <p id="greeting"></p>
+    <p id="clock"></p>
+    <a class="btn" href="logout.php">Logout</a>
+</div>
+<script>
+    const c = document.getElementById("clock"),
+        g = document.getElementById("greeting");
+    const up = () => c.textContent = new Date().toDateString() + " • " + new Date().toLocaleTimeString();
+    g.textContent = (h => h < 12 ? "Good morning!" : h < 18 ? "Good afternoon!" : "Good evening!")(new Date().getHours());
+    up();
+    setInterval(up, 1000);
+</script>
+
 <body>
-    <?php
-    session_start();
-    if (!isset($_SESSION['username'])) {
-        header("Location: login.php");
-        exit();
-    }
-    ?>
-    <div class="welcome-box">
-        <h1>Welcome, <?= $_SESSION['username']; ?> 🎉</h1>
-        <p id="greeting"></p>
-        <p id="clock"></p>
-        <a class="btn" href="logout.php">Logout</a>
+    <div class="nav">
+        <a href="index.php">Home</a>
+        <a href="login.php">Login</a>
+        <a href="welcome.php">Welcome</a>
+        <a href="logout.php">Logout</a>
     </div>
-    <script>
-        const c = document.getElementById("clock"),
-            g = document.getElementById("greeting");
-        const up = () => c.textContent = new Date().toDateString() + " • " + new Date().toLocaleTimeString();
-        g.textContent = (h => h < 12 ? "Good morning!" : h < 18 ? "Good afternoon!" : "Good evening!")(new Date().getHours());
-        up();
-        setInterval(up, 1000);
-    </script>
+
+
 
 </body>
 

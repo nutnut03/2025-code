@@ -7,14 +7,15 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+<?php
+session_start();
+session_destroy();
+header("Location: login.php");
+exit();
+?>
 
 <body>
-    <?php
-    session_start();
-    session_destroy();
-    header("Location: login.php");
-    exit();
-    ?>
+
 </body>
 
 </html>

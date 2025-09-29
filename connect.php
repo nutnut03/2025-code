@@ -7,18 +7,19 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+<?php
+$conn = new mysqli("localhost", "root", "");
+if ($conn->connect_error) die("Connection failed: " . $conn->connect_error);
+echo "Connected successfully<br>";
+
+$sql = "CREATE DATABASE mydatabase";
+echo $conn->query($sql) ? "Database created successfully" : "Error: " . $conn->error;
+
+$conn->close();
+?>
 
 <body>
-    <?php
-    $conn = new mysqli("localhost", "root", "");
-    if ($conn->connect_error) die("Connection failed: " . $conn->connect_error);
-    echo "Connected successfully<br>";
 
-    $sql = "CREATE DATABASE mydatabase";
-    echo $conn->query($sql) ? "Database created successfully" : "Error: " . $conn->error;
-
-    $conn->close();
-    ?>
 </body>
 
 </html>

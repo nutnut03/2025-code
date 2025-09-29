@@ -7,25 +7,26 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+<?php
+session_start();
+$conn = new mysqli("localhost", "root", "", "mydatabase") or die("DB Fail");
+
+if ($_POST) {
+    $stmt = $conn->prepare("SELECT * FROM users WHERE username=?");
+    $stmt->bind_param("s", $_POST['username']);
+    $stmt->execute();
+    $row = $stmt->get_result()->fetch_assoc();
+
+    if ($row && $_POST['password'] === $row['password']) {
+        $_SESSION['username'] = $row['username'];
+        header("Location: welcome.php");
+        exit;
+    } else echo "<script>alert('Invalid username or password!');</script>";
+}
+?>
 
 <body>
-    <?php
-    session_start();
-    $conn = new mysqli("localhost", "root", "", "mydatabase") or die("DB Fail");
 
-    if ($_POST) {
-        $stmt = $conn->prepare("SELECT * FROM users WHERE username=?");
-        $stmt->bind_param("s", $_POST['username']);
-        $stmt->execute();
-        $row = $stmt->get_result()->fetch_assoc();
-
-        if ($row && $_POST['password'] === $row['password']) {
-            $_SESSION['username'] = $row['username'];
-            header("Location: welcome.php");
-            exit;
-        } else echo "<script>alert('Invalid username or password!');</script>";
-    }
-    ?>
 
     <form method="post">
         <h2>Login</h2>

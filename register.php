@@ -7,18 +7,19 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+<?php
+$conn = new mysqli("localhost", "root", "", "mydatabase") or die("DB Fail");
+if ($_POST) {
+    $stmt = $conn->prepare("INSERT INTO users(username,password)VALUES(?,?)");
+    $stmt->bind_param("ss", $_POST['username'], $_POST['password']);
+    echo $stmt->execute()
+        ? "<script>alert('Registered successfully!');location='login.php';</script>"
+        : "Error: " . $stmt->error;
+}
+?>
 
 <body>
-    <?php
-    $conn = new mysqli("localhost", "root", "", "mydatabase") or die("DB Fail");
-    if ($_POST) {
-        $stmt = $conn->prepare("INSERT INTO users(username,password)VALUES(?,?)");
-        $stmt->bind_param("ss", $_POST['username'], $_POST['password']);
-        echo $stmt->execute()
-            ? "<script>alert('Registered successfully!');location='login.php';</script>"
-            : "Error: " . $stmt->error;
-    }
-    ?>
+
 
     <form method="post">
         <h2>Register</h2>
