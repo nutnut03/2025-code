@@ -107,7 +107,8 @@ form {
  text-align: center;
 }
 
-input[name="username"],
+input[type="text"],
+input[type="email"],
 input[type="password"] {
  border: 1px solid #ccc;
  border-radius: 5px;
