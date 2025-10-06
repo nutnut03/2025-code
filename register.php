@@ -19,8 +19,14 @@ if ($_POST) {
 ?>
 
 <body>
-
-
+    <!-- Navigation -->
+    <div class="nav">
+        <a href="home.php">Home</a>
+        <a href="login.php">Login</a>
+        <a href="register.php">Register</a>
+        <a href="welcome.php">Welcome</a>
+        <a href="logout.php">Logout</a>
+    </div>
     <form method="post">
         <h2>Register</h2>
         <label>Username: <input type="text" name="username" required></label><br><br>

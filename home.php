@@ -1,21 +1,21 @@
-<?php
-session_start();
-if (!isset($_SESSION['username'])) {
-    header("Location: login.php");
-    exit();
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
+    <title>Home</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+    <div class="bg"> </div>
+    <!-- Home Page Content -->
+    <div class="home-box">
+        <h1>Welcome to My Website 🌐</h1>
+        <p>This is the homepage. Please <a href="login.php">Login</a> or <a href="register.php">Register</a> to continue.</p>
+    </div>
+
     <!-- Navigation -->
     <div class="nav">
         <a href="home.php">Home</a>
@@ -24,32 +24,6 @@ if (!isset($_SESSION['username'])) {
         <a href="welcome.php">Welcome</a>
         <a href="logout.php">Logout</a>
     </div>
-
-    <!-- Welcome Box -->
-    <div class="welcome-box">
-        <h1>Welcome, <?= htmlspecialchars($_SESSION['username']); ?> 🎉</h1>
-        <p id="greeting"></p>
-        <p id="clock"></p>
-    </div>
-
-    <script>
-        const c = document.getElementById("clock"),
-            g = document.getElementById("greeting");
-
-        function updateClock() {
-            let d = new Date();
-            c.textContent = d.toDateString() + " • " + d.toLocaleTimeString();
-        }
-
-        function setGreeting() {
-            let h = new Date().getHours();
-            g.textContent = h < 12 ? "Good morning!" : h < 18 ? "Good afternoon!" : "Good evening!";
-        }
-
-        setGreeting();
-        updateClock();
-        setInterval(updateClock, 1000);
-    </script>
 
     <!-- Images used to open the lightbox -->
     <div class="image-container">
@@ -135,6 +109,7 @@ if (!isset($_SESSION['username'])) {
             Tel.No. - Globe: (032) 479 0414 Email us: academic_support@meriseinc.com
         </p>
     </footer>
+
 </body>
 
 </html>
