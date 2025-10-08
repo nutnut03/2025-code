@@ -27,13 +27,19 @@ if ($_POST) {
 
 <body>
     <!-- Navigation -->
-    <div class="nav">
-        <a href="home.php">Home</a>
-        <a href="login.php">Login</a>
-        <a href="register.php">Register</a>
-        <a href="welcome.php">Welcome</a>
-        <a href="logout.php">Logout</a>
-    </div>
+    <nav class="nav">
+        <div class="logo"><a href="//www.facebook.com/search/top?q=merise%20english%20academy%20cebu"><img src="images/MeRISE-png.png"></a></div>
+        <div class=" menu-toggle" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="home.php">Home</a>
+            <a href="login.php">Login</a>
+            <a href="register.php">Register</a>
+            <a href="welcome.php">Welcome</a>
+            <a href="logout.php">Logout</a>
+        </div>
+    </nav>
 
     <form method="post">
         <h2>Login</h2>
@@ -42,6 +48,19 @@ if ($_POST) {
         <input type="submit" value="Login">
     </form>
 
+    <footer>
+        <p>
+            MeRISE English Academy 2025 ESY Building, Corner Juana Osmena St. Brgy.
+            Kamputhaw, Cebu City Office Tel.No. - PLDT: (032) 345 8524 | Office
+            Tel.No. - Globe: (032) 479 0414 Email us: academic_support@meriseinc.com
+        </p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+    </script>
 
 </body>
 
