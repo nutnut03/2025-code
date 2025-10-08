@@ -21,7 +21,7 @@ if ($_POST) {
 <body>
     <!-- Navigation -->
     <nav class="nav">
-        <div class="logo"><a href="//www.facebook.com/search/top?q=merise%20english%20academy%20cebu"><img src="images/MeRISE-png.png"></a></div>
+        <div class="logo"><a href="https://www.facebook.com/MeRISEEnglishAcademyCebu"><img src="images/MeRISE-png.png"></a></div>
         <div class=" menu-toggle" onclick="toggleMenu()">
             <span></span><span></span><span></span>
         </div>
@@ -33,6 +33,7 @@ if ($_POST) {
             <a href="logout.php">Logout</a>
         </div>
     </nav>
+
 
 
     <form method="post">

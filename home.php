@@ -12,12 +12,13 @@
     <div class="bg"> </div>
     <!-- Home Page Content -->
     <div class="home-box">
-        <h1>Welcome to My Website 🌐</h1>
+        <h1>Welcome to MeRISE English Academy</h1>
+        <p>Your journey to mastering English starts here!</p>
     </div>
 
     <!-- Navigation -->
     <nav class="nav">
-        <div class="logo"><a href="//www.facebook.com/search/top?q=merise%20english%20academy%20cebu"><img src="images/MeRISE-png.png"></a></div>
+        <div class="logo"><a href="https://www.facebook.com/MeRISEEnglishAcademyCebu"><img src="images/MeRISE-png.png"></a></div>
         <div class=" menu-toggle" onclick="toggleMenu()">
             <span></span><span></span><span></span>
         </div>
@@ -30,82 +31,17 @@
         </div>
     </nav>
 
+    <!-- COMPANY CONTENT -->
+    <div class="container">
+        <section class="section">
+            <h1>About Merise English Academy</h1>
+            <p>MeRISE English Academy is a top-notch English Language School, formerly known as United Re-Growth Philippines Inc. Masters of Business English Academy (URG-MBA). It is a language academy specializing in General English, Business English, and Pronunciation teaching. It is the goal of the Academy to provide the best English language training for our students. Thus, the Academy requires instructors to undergo extensive teacher-training courses.
 
-    <!-- Images used to open the lightbox -->
-    <div class="image-container">
-        <div class="responsive">
-            <div class="gallery">
-                <a target="_blank" href="img_5terre.jpg">
-                    <img src="images/gadget.jpg" alt="Cinque Terre" />
-                </a>
-                <div class="desc">Business English</div>
-            </div>
-        </div>
+                MeRISE English Academy is proud to say that all our instructors are highly trained and have certifications related to English language teaching. MeRISE faculty take into heart what students need. Headed by the Academic Team, our instructors are trained to provide lessons customized and tailored to fit students’ levels, needs, and requests.
 
-        <div class="responsive">
-            <div class="gallery">
-                <a target="_blank" href="img_forest.jpg">
-                    <img src="images/gadget.jpg" alt="Forest" />
-                </a>
-                <div class="desc">Business English</div>
-            </div>
-        </div>
+                Aside from competent teachers, the Academy also provides students with a holistic educational experience. The Academy is housed in an 8-story building conducive to learning. The building offers students a dormitory with state-of-the-art facilities and the services of a hotel. With students’ needs in mind, the ground floor of the building was intentionally leased to a restaurant that provides Japanese and Western fusion treats and dishes. A laundromat, convenience store, and salon-spa business can also be found on the ground floor of the building for students’ ease and convenience.</p>
+        </section>
 
-        <div class="responsive">
-            <div class="gallery">
-                <a target="_blank" href="img_lights.jpg">
-                    <img src="images/gadget.jpg" alt="Northern Lights" />
-                </a>
-                <div class="desc">Business English</div>
-            </div>
-        </div>
-
-        <div class="responsive">
-            <div class="gallery">
-                <a target="_blank" href="img_mountains.jpg">
-                    <img src="images/gadget.jpg" alt="Mountains" />
-                </a>
-                <div class="desc">Business English</div>
-            </div>
-        </div>
-        <div class="responsive">
-            <div class="gallery">
-                <a target="_blank" href="img_5terre.jpg">
-                    <img src="images/gadget.jpg" alt="Cinque Terre" />
-                </a>
-                <div class="desc">Business English</div>
-            </div>
-        </div>
-
-        <div class="responsive">
-            <div class="gallery">
-                <a target="_blank" href="img_forest.jpg">
-                    <img src="images/gadget.jpg" alt="Forest" />
-                </a>
-                <div class="desc">Business English</div>
-            </div>
-        </div>
-
-        <div class="responsive">
-            <div class="gallery">
-                <a target="_blank" href="img_lights.jpg">
-                    <img src="images/gadget.jpg" alt="Northern Lights" />
-                </a>
-                <div class="desc">Business English</div>
-            </div>
-        </div>
-
-        <div class="responsive">
-            <div class="gallery">
-                <a target="_blank" href="img_mountains.jpg">
-                    <img src="images/gadget.jpg" alt="Mountains" />
-                </a>
-                <div class="desc">Business English</div>
-            </div>
-        </div>
-
-
-        <div class="clearfix"></div>
     </div>
 
     <footer>

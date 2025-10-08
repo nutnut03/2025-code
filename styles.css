@@ -77,8 +77,8 @@ form label {
 
 /* ===== Background Section ===== */
 .bg {
-  background-image: url("images/gadget.jpg");
-  height: 60vh;
+  background-image: url("images/MeRISE-Main.jpg");
+  height: 85vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -98,7 +98,7 @@ form label {
 
 /* ===== Home Box ===== */
 .home-box {
-  max-width: 600px;
+ width: 60%;
   background: #fff;
   text-align: center;
   padding: 40px 30px;
@@ -329,5 +329,80 @@ img {
   to {
     opacity: 1;
     transform: none;
+  }
+}
+
+
+/* ===== Container & Section Styles ===== */
+.container {
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 40px 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.section h1 {
+  color: #D23339;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  border-bottom: 3px solid #2D2F2E;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+.section p {
+  color: #333;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  text-align: justify;
+  margin-top: 10px;
+  white-space: pre-line; /* preserves paragraph formatting */
+}
+
+/* ===== Animation ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .container {
+    margin: 40px 20px;
+    padding: 25px 20px;
+  }
+
+  .section h1 {
+    font-size: 1.5rem;
+  }
+
+  .section p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin: 20px 10px;
+    padding: 20px 15px;
+  }
+
+  .section h1 {
+    font-size: 1.3rem;
+  }
+
+  .section p {
+    font-size: 0.95rem;
   }
 }
