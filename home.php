@@ -13,7 +13,6 @@
     <!-- Home Page Content -->
     <div class="home-box">
         <h1>Welcome to My Website 🌐</h1>
-        <p>This is the homepage. Please <a href="login.php">Login</a> or <a href="register.php">Register</a> to continue.</p>
     </div>
 
     <!-- Navigation -->
@@ -24,8 +23,8 @@
         </div>
         <div class="nav-links" id="navLinks">
             <a href="home.php">Home</a>
-            <a href="login.php">Login</a>
             <a href="register.php">Register</a>
+            <a href="login.php">Login</a>
             <a href="welcome.php">Welcome</a>
             <a href="logout.php">Logout</a>
         </div>

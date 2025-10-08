@@ -22,10 +22,10 @@ if (!isset($_SESSION['username'])) {
         <div class=" menu-toggle" onclick="toggleMenu()">
             <span></span><span></span><span></span>
         </div>
-        <div class="nav-links" id="navLinks">
+         <div class="nav-links" id="navLinks">
             <a href="home.php">Home</a>
-            <a href="login.php">Login</a>
             <a href="register.php">Register</a>
+            <a href="login.php">Login</a>
             <a href="welcome.php">Welcome</a>
             <a href="logout.php">Logout</a>
         </div>

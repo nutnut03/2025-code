@@ -23,21 +23,6 @@ $conn->close();
 ?>
 
 <body>
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="logo"><a href="//www.facebook.com/search/top?q=merise%20english%20academy%20cebu"><img src="images/MeRISE-png.png"></a></div>
-        <div class=" menu-toggle" onclick="toggleMenu()">
-            <span></span><span></span><span></span>
-        </div>
-        <div class="nav-links" id="navLinks">
-            <a href="home.php">Home</a>
-            <a href="login.php">Login</a>
-            <a href="register.php">Register</a>
-            <a href="welcome.php">Welcome</a>
-            <a href="logout.php">Logout</a>
-        </div>
-    </nav>
-
 
 </body>
 
