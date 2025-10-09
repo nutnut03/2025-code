@@ -30,6 +30,11 @@ exit();
         </div>
     </nav>
 
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+    </script>
 
 </body>
 
