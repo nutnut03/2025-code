@@ -57,7 +57,6 @@
                     </a>
                 </p>
             </div>
-
         </div>
 
         <div class="footer-bottom">
