@@ -10,55 +10,42 @@
 
 <body>
     <h2>Add User Information</h2>
-    <form method="POST" action="">
-        <label for="firstname">First Name:</label><br>
-        <input type="text" name="firstname" required><br><br>
-
-        <label for="lastname">Last Name:</label><br>
-        <input type="text" name="lastname" required><br><br>
-
-        <label for="nickname">Nickname:</label><br>
-        <input type="text" name="nickname"><br><br>
-
-        <label for="age">Age:</label><br>
-        <input type="number" name="age" min="0"><br><br>
-
-        <label for="email">Email:</label><br>
-        <input type="email" name="email" required><br><br>
-
-        <label for="contact_number">Contact Number:</label><br>
-        <input type="text" name="contact_number"><br><br>
-
+    <form method="POST">
+        <label>First Name:</label>
+        <input type="text" name="firstname" required>
+        <label>Last Name:</label>
+        <input type="text" name="lastname" required>
+        <label>Nickname:</label>
+        <input type="text" name="nickname">
+        <label>Address:</label>
+        <input type="text" name="address">
+        <label>Location:</label>
+        <input type="text" name="location">
+        <label>Age:</label>
+        <input type="number" name="age" min="0">
+        <label>Email:</label>
+        <input type="email" name="email" required>
+        <label>Contact Number:</label>
+        <input type="text" name="contact_number">
         <input type="submit" name="submit" value="Save">
     </form>
 
     <?php
-    if (isset($_POST['submit'])) {
-        // Connect to database
+    if (!empty($_POST['submit'])) {
         $conn = new mysqli("localhost", "root", "", "mydatabase");
+        if ($conn->connect_error) die("Connection failed: " . $conn->connect_error);
 
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
+        $sql = "INSERT INTO DataStorage (firstname, lastname, nickname, address, location, age, email, contact_number)
+            VALUES ('{$conn->real_escape_string($_POST['firstname'])}',
+                    '{$conn->real_escape_string($_POST['lastname'])}',
+                    '{$conn->real_escape_string($_POST['nickname'])}',
+                    '{$conn->real_escape_string($_POST['address'])}',
+                    '{$conn->real_escape_string($_POST['location'])}',
+                    " . (int)$_POST['age'] . ",
+                    '{$conn->real_escape_string($_POST['email'])}',
+                    '{$conn->real_escape_string($_POST['contact_number'])}')";
 
-        // Prepare data
-        $firstname = $conn->real_escape_string($_POST['firstname']);
-        $lastname = $conn->real_escape_string($_POST['lastname']);
-        $nickname = $conn->real_escape_string($_POST['nickname']);
-        $age = (int)$_POST['age'];
-        $email = $conn->real_escape_string($_POST['email']);
-        $contact_number = $conn->real_escape_string($_POST['contact_number']);
-
-        // Insert into table
-        $sql = "INSERT INTO DataStorage (firstname, lastname, nickname, age, email, contact_number)
-            VALUES ('$firstname', '$lastname', '$nickname', $age, '$email', '$contact_number')";
-
-        if ($conn->query($sql) === TRUE) {
-            echo "<p style='color:green;'>New record created successfully!</p>";
-        } else {
-            echo "<p style='color:red;'>Error: " . $conn->error . "</p>";
-        }
-
+        echo $conn->query($sql) ? "<p style='color:green;'>Record added!</p>" : "<p style='color:red;'>Error: {$conn->error}</p>";
         $conn->close();
     }
     ?>
