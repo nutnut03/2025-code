@@ -17,10 +17,6 @@
         <input type="text" name="lastname" required>
         <label>Nickname:</label>
         <input type="text" name="nickname">
-        <label>Address:</label>
-        <input type="text" name="address">
-        <label>Location:</label>
-        <input type="text" name="location">
         <label>Age:</label>
         <input type="number" name="age" min="0">
         <label>Email:</label>
@@ -35,12 +31,10 @@
         $conn = new mysqli("localhost", "root", "", "mydatabase");
         if ($conn->connect_error) die("Connection failed: " . $conn->connect_error);
 
-        $sql = "INSERT INTO DataStorage (firstname, lastname, nickname, address, location, age, email, contact_number)
+        $sql = "INSERT INTO DataStorage (firstname, lastname, nickname, age, email, contact_number)
             VALUES ('{$conn->real_escape_string($_POST['firstname'])}',
                     '{$conn->real_escape_string($_POST['lastname'])}',
                     '{$conn->real_escape_string($_POST['nickname'])}',
-                    '{$conn->real_escape_string($_POST['address'])}',
-                    '{$conn->real_escape_string($_POST['location'])}',
                     " . (int)$_POST['age'] . ",
                     '{$conn->real_escape_string($_POST['email'])}',
                     '{$conn->real_escape_string($_POST['contact_number'])}')";
